@@ -1,0 +1,156 @@
+\RequirePackage{tikz}
+\RequirePackage{etoolbox}
+\RequirePackage{xargs}
+\RequirePackage{hyperref}
+\urlstyle{same}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VARIABLES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Taken from Awesome CV
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define writer's name
+% Usage: \name{<firstname>}{<lastname>}
+% Usage: \firstname{<firstname>}
+% Usage: \lastname{<lastname>}
+% Usage: \familyname{<familyname>}
+\newcommand*{\name}[2]{\def\@firstname{#1}\def\@lastname{#2}}
+\newcommand*{\firstname}[1]{\def\@firstname{#1}}
+\newcommand*{\lastname}[1]{\def\@lastname{#1}}
+\newcommand*{\familyname}[1]{\def\@lastname{#1}}
+\def\@familyname{\@lastname}
+
+% Define writer's address
+% Usage: \address{<address>}
+\newcommand*{\address}[1]{\def\@address{#1}}
+
+% Define writer's position
+% Usage: \name{<position>}
+\newcommand*{\position}[1]{\def\@position{#1}}
+
+% Defines writer's mobile (optional)
+% Usage: \mobile{<mobile number>}
+\newcommand*{\mobile}[1]{\def\@mobile{#1}}
+
+% Defines writer's email (optional)
+% Usage: \email{<email adress>}
+\newcommand*{\email}[1]{\def\@email{#1}}
+
+% Defines writer's homepage (optional)
+% Usage: \homepage{<url>}
+\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+
+% Defines writer's github (optional)
+% Usage: \github{<github-nick>}
+\newcommand*{\github}[1]{\def\@github{#1}}
+
+% Defines writer's gitlab (optional)
+% Usage: \github{<gitlab-nick>}
+\newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
+
+% Defines writer's github (optional)
+% Usage: \github{<github-nick>}
+\newcommand*{\location}[1]{\def\@location{#1}}
+
+% Defines writer's linked-in (optional)
+% Usage: \linkedin{<linked-in-nick>}
+\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
+
+% Defines writer's stackoverflow profile (optional)
+% Usage: \stackoverflow{<so userid>}{<so username>}
+% e.g.https://stackoverflow.com/users/123456/sam-smith
+% would be \stackoverflow{123456}{sam-smith}
+\newcommand*{\stackoverflow}[2]{\def\@stackoverflowid{#1}\def\@stackoverflowname{#2}}
+
+% Defines writer's skype (optional)
+% Usage: \skype{<skype account>}
+\newcommand*{\skype}[1]{\def\@skype{#1}}
+
+% Defines writer's twitter (optional)
+% Usage: \twitter{<twitter handle>}
+\newcommand*{\twitter}[1]{\def\@twitter{#1}}
+
+% Defines writer's quote (optional)
+% Usage: \quote{<quote>}
+\renewcommand*{\quote}[1]{\def\@quote{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\headerinfosize}{10pt}
+\newcommand*{\headerprintname}{
+  \color{\@headercolor}\fontsize{35pt}{1em}\headerfont
+  \@firstname~\textbf{\@lastname}
+}
+\newcommand*{\headerprintaddress}{
+  \color{\@headercolor}\fontsize{\headerinfosize}{1em}
+  \faHome\thinspace\headerfont\@address
+}
+\newcommand*{\headerprintmobile}{
+  \color{\@headercolor}\fontsize{\headerinfosize}{1em}
+  \faMobile\enspace\headerfont\@mobile
+}
+\newcommand*{\headerprintemail}{
+  \color{\@headercolor}\fontsize{\headerinfosize}{1em}
+  \faEnvelope\enspace\headerfont\href{mailto:\@email}{\@email}
+}
+\newcommand*{\headerprinthomepage}{
+  \color{\@headercolor}\fontsize{\headerinfosize}{1em}
+  \faLink\enspace\headerfont\url{\@homepage}
+}
+
+% Define header color and background
+% Usage: \fillheader{<fillcolor>}{<color>}
+% Example: \fillheader{black!80}{white}
+\newcommand*{\fillheader}[2]{
+  \def\@headerfill{true}
+  \def\@headercolor{#2}
+  % \def\@sectioncolor{#2}
+  \def\@headerfillcolor{#1}
+}
+% Defaults
+\def\@headerfill{false}
+\def\@headercolor{black}
+
+\newcommand*{\makeinformationbox}{
+  \begin{center}
+    \ifdef{\@github}{\faGithub~\href{https://github.com/\@github}{\@github}}{}
+    \ifdef{\@gitlab}{\faGitlab~\href{https://gitlab.com/\@gitlab}{\@gitlab}}{}
+    \ifdef{\@twitter}{\faTwitter~\href{https://twitter.com/\@twitter}{\@twitter}}{}
+    \ifdef{\@skype}{\faSkype~\href{https://skype.com/\@skype}{\@skype}}{}
+    \ifdef{\@linkedin}{\faLinkedin~\href{https://linkedin.com/\@linkedin}{\@linkedin}}{}
+  \end{center}
+}
+\newcommand*{\makeheader}{
+  \ifdef{\@headerfillcolor}{
+    \tikz[remember picture,overlay]
+    \draw [fill,\@headerfillcolor]
+    (current page.north west)
+    rectangle
+    +(\paperwidth,-0.16\paperheight);%
+  }{}
+
+  \begin{center}
+    \vspace{-1em}
+    \headerprintname
+    \fontsize{10pt}{1em}
+    \par\vspace{-.5em}
+    \headerprintaddress
+    \par
+    \headerprintmobile~\headerprintemail~\headerprinthomepage
+    \par
+    \makeinformationbox
+  \end{center}
+
+
+  \ifundef{\@headerfillcolor}{
+    \vspace{-.5em}
+    \noindent\makebox[\linewidth]{\color{black}\rule{\paperwidth}{0.4pt}}
+  }{
+    \vspace{2em}
+  }
+}
