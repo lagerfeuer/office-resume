@@ -107,6 +107,7 @@
   \def\@headercolor{#2}
   % \def\@sectioncolor{#2}
   \def\@headerfillcolor{#1}
+
 }
 % Defaults
 \def\@headerfill{false}
@@ -127,11 +128,11 @@
     \draw [fill,\@headerfillcolor]
     (current page.north west)
     rectangle
-    +(\paperwidth,-0.16\paperheight);%
+    +(\paperwidth,-0.15\paperheight);%
   }{}
 
   \begin{center}
-    \vspace{-1em}
+    \vspace{-2em}
     \headerprintname
     \fontsize{10pt}{1em}
     \par\vspace{-.5em}
