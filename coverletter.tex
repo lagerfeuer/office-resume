@@ -1,0 +1,73 @@
+\documentclass[12pt,a4paper]{resume}
+\usepackage{lipsum}
+
+\cvname{Dwight K.}{Schrute III}
+\cvaddress{1 Main Street | Scranton, PA 18503}
+\cvmobile{(570) 555-1212}
+\cvemail{d.schrute@schrutefarms.com}
+\cvhomepage{schrutefarms.com}
+
+\github{dmoney}
+\gitlab{dmoney}
+\linkedin{dwigt}
+\twitter{@DwightARM}
+\skype{PaperSalez}
+
+
+
+\pagenumbering{gobble}
+
+\newcommand{\content}{
+  \sendto{123 Fake Ave.\\ Scranton\\ 18503 PA\\ USA}{Scranton, \today}
+
+  \opening{Job application for Regional Manager}
+
+  \lipsum[1-1]\\[\baselineskip]
+  \lipsum[2-2]\\
+
+  \closing{Best regards,}
+
+  \signature{signature/signature.png}
+}
+
+\begin{document}
+\makeheader
+\content
+
+% Variations of black and gray
+\newpage
+\fillheader{black!80}{white}
+\makeheader
+\content
+\newpage
+\fillheader{black}{white}
+\makeheader
+\content
+
+% Colored headers
+% colors are defined in common/colors.tex
+\newpage
+\fillheader{gunmetal}{white}
+\makeheader
+\content
+\newpage
+\fillheader{oxford}{white}
+\makeheader
+\content
+\newpage
+\fillheader{MaastrichtBlue1}{white}
+\makeheader
+\content
+\newpage
+\fillheader{MaastrichtBlue2}{white}
+\makeheader
+\content
+\newpage
+\fillheader{DarkSienna1}{white}
+\makeheader
+\content
+\newpage
+\fillheader{DarkSienna2}{white}
+\makeheader
+\content
+\end{document}

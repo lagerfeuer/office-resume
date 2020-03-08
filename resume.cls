@@ -12,14 +12,55 @@
 \RequirePackage{multicol}
 \RequirePackage{ragged2e}
 \RequirePackage[inline]{enumitem}
+\RequirePackage{graphicx}
 
 \input{common/colors.tex}
 \input{common/fonts.tex}
 \input{common/header.tex}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COVER LETTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% address to
+% Usage: sendto{<address>}{<date-and-location>}
+\newcommand{\sendto}[2]{
+  \vspace{2em}
+  {#1}
+  {\hfill #2}
+  \vspace{2em}
+}
+
+% opening
+% Usage: opening{<line>}
+\newcommand{\opening}[1]{
+  {\bfseries #1}
+}
+% closing
+% Usage: closing{<line>}
+\newcommand{\closing}[1]{
+  \vspace{2em}
+  #1
+  \par
+}
+
+% signature
+% Usage: signature{<image-path>}
+\newcommand{\signature}[1]{
+  \vspace{2em}
+  \begin{center}
+    \includegraphics[keepaspectratio,height=3\baselineskip]{#1}\\
+    \@firstname~\@lastname
+  \end{center}
+}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % RESUME
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\@sectioncolor{oxford}
 \def\@secondarycolor{\color{darkgray!80}}
@@ -37,7 +78,7 @@
 \titlespacing{\section}{0pt}{0pt}{.5em}
 \titleformat{\section}{
   \color{\@sectioncolor}\RaggedLeft\Quicksand\LARGE\bfseries
-}{}{0em}{\@secondarycolor\titlerule[1pt]}
+}{}{0em}{\@secondarycolor\titlerule[2pt]}
 \titlespacing{\subsection}{0pt}{-.2em}{0pt}
 \titleformat{\subsection}[runin]{\Quicksand\large\bfseries}{}{0em}{}[\enspace]
 
