@@ -14,9 +14,9 @@ build: $(PDFS)
 
 resume: resume.pdf
 
-cover-letter: cover_letter.pdf
+cover-letter: coverletter.pdf
 
-cover-letters: cover-letters/*.pdf
+cover-letters: coverletters/*.pdf
 
 %.pdf: %.tex
 	$(LATEX) $(FLAGS) $<
