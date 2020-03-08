@@ -13,35 +13,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define writer's name
-% Usage: \name{<firstname>}{<lastname>}
-% Usage: \firstname{<firstname>}
-% Usage: \lastname{<lastname>}
-% Usage: \familyname{<familyname>}
-\newcommand*{\name}[2]{\def\@firstname{#1}\def\@lastname{#2}}
-\newcommand*{\firstname}[1]{\def\@firstname{#1}}
-\newcommand*{\lastname}[1]{\def\@lastname{#1}}
-\newcommand*{\familyname}[1]{\def\@lastname{#1}}
+% Usage: \cvname{<firstname>}{<lastname>}
+% Usage: \cvfirstname{<firstname>}
+% Usage: \cvlastname{<lastname>}
+% Usage: \cvfamilyname{<familyname>}
+\newcommand*{\cvname}[2]{\def\@firstname{#1}\def\@lastname{#2}}
+\newcommand*{\cvfirstname}[1]{\def\@firstname{#1}}
+\newcommand*{\cvlastname}[1]{\def\@lastname{#1}}
+\newcommand*{\cvfamilyname}[1]{\def\@lastname{#1}}
 \def\@familyname{\@lastname}
 
 % Define writer's address
-% Usage: \address{<address>}
-\newcommand*{\address}[1]{\def\@address{#1}}
+% Usage: \cvaddress{<address>}
+\newcommand*{\cvaddress}[1]{\def\@address{#1}}
 
 % Define writer's position
-% Usage: \name{<position>}
-\newcommand*{\position}[1]{\def\@position{#1}}
+% Usage: \cvposition{<position>}
+\newcommand*{\cvposition}[1]{\def\@position{#1}}
 
 % Defines writer's mobile (optional)
-% Usage: \mobile{<mobile number>}
-\newcommand*{\mobile}[1]{\def\@mobile{#1}}
+% Usage: \cvmobile{<mobile number>}
+\newcommand*{\cvmobile}[1]{\def\@mobile{#1}}
 
 % Defines writer's email (optional)
-% Usage: \email{<email adress>}
-\newcommand*{\email}[1]{\def\@email{#1}}
+% Usage: \cvemail{<email adress>}
+\newcommand*{\cvemail}[1]{\def\@email{#1}}
 
 % Defines writer's homepage (optional)
-% Usage: \homepage{<url>}
-\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+% Usage: \cvhomepage{<url>}
+\newcommand*{\cvhomepage}[1]{\def\@homepage{#1}}
 
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
@@ -50,10 +50,6 @@
 % Defines writer's gitlab (optional)
 % Usage: \github{<gitlab-nick>}
 \newcommand*{\gitlab}[1]{\def\@gitlab{#1}}
-
-% Defines writer's github (optional)
-% Usage: \github{<github-nick>}
-\newcommand*{\location}[1]{\def\@location{#1}}
 
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}

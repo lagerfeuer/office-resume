@@ -34,7 +34,7 @@
 % SECTIONS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
-\titlespacing{\section}{0pt}{1em}{1em}
+\titlespacing{\section}{0pt}{0pt}{.5em}
 \titleformat{\section}{
   \color{\@sectioncolor}\RaggedLeft\Quicksand\LARGE\bfseries
 }{}{0em}{\@secondarycolor\titlerule[1pt]}
@@ -101,6 +101,7 @@
   \setlength{\parskip}{0pt}
 }{
   \setlength{\parskip}{\@tmpparskip}
+  \vspace{-1em}
 }
 % EXPERIENCE
 % Usage: \position{<company>}{<job>}{<location>}{<duration>}{<text>}
@@ -112,4 +113,35 @@
   \par
   #5
   \par\vspace{1em}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{projects}{
+  \begin{tightitemize}
+  }{
+  \end{tightitemize}
+}
+% Project
+% Usage: \project{<name>}{<description>}
+\newcommand{\project}[2]{
+\item[\faArchive] {\subheaderfont\bfseries{#1}}\enspace
+  #2
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AWARDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{awards}{
+  \begin{tightitemize}
+  }{
+  \end{tightitemize}
+}
+% Awards
+% Usage: \award{<name>}{year}{<description>}
+\newcommand{\award}[3]{
+\item[\faTrophy] {\subheaderfont\bfseries{#1}}\enspace
+  {\hfill\small\@secondarycolor\faCalendar\enspace #2}\\
+  #3
 }
