@@ -25,6 +25,6 @@ clean:
 	rm -rf $(shell find $(OUTDIR) -type f -not -name "*.pdf")
 
 cleanall:
-	rm -rf $(OUT)
+	rm -rf $(OUTDIR)
 
 .PHONY: build example resume cover-letter clean cleanall
