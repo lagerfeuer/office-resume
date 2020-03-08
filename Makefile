@@ -1,6 +1,6 @@
-LATEXMK := latexmk
-FLAGS := -pdf
-OUT += -outdir=out/
+LATEX := latexmk
+OUTDIR := out/
+FLAGS := -pdf -outdir=$(OUT)
 PDFS := $(subst tex,pdf,$(shell find . -name "*.tex"))
 
 ifeq ($(cont), true)
@@ -19,12 +19,12 @@ cover-letter: cover_letter.pdf
 cover-letters: cover-letters/*.pdf
 
 %.pdf: %.tex
-	$(LATEXMK) $(FLAGS) $(OUT) $<
+	$(LATEX) $(FLAGS) $<
 
 clean:
-	rm -rf $(shell find out/ -type f -not -name "*.pdf")
+	rm -rf $(shell find $(OUT) -type f -not -name "*.pdf")
 
-cleanx:
-	rm -rf out/
+cleanall:
+	rm -rf $(OUT)
 
-.PHONY: build example resume cover-letter clean cleanx
+.PHONY: build example resume cover-letter clean cleanall
