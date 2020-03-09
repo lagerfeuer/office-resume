@@ -32,6 +32,6 @@ Docker image: `lagerfeuer/xetexlive:latest`
 ```sh
 docker run \
   --rm -v $(pwd):/resume --workdir=/resume \
-  lagerfeuer/xetexlive:latest \
+  lagerfeuer/xetexlive-more:latest \
   make cover-letter resume
 ```
