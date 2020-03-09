@@ -22,9 +22,9 @@ cover-letters: coverletters/*.pdf
 	$(LATEX) $(FLAGS) $<
 
 clean:
-	rm -rf $(shell find $(OUTDIR) -type f -not -name "*.pdf")
+	$(LATEX) $(FLAGS) -c
 
 cleanall:
-	rm -rf $(OUTDIR)
+	$(LATEX) $(FLAGS) -C
 
 .PHONY: build example resume cover-letter clean cleanall
