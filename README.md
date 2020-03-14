@@ -5,10 +5,10 @@ I am sure you can make it work for multiple pages, however I have not tried that
 
 ## Showcase
 ### Resume
-[PDF](showcase/resume.pdf) or [All Colors](showcase/resume-allcolors.pdf)
+See the [PDF](showcase/resume.pdf) or the [All Colors](showcase/resume-allcolors.pdf) version.
 ![resume](showcase/resume.jpg)
 ### Cover Letter
-[PDF](showcase/coverletter.pdf) or [All Colors](showcase/coverletter-allcolors.pdf)
+See the [PDF](showcase/coverletter.pdf) or the [All Colors](showcase/coverletter-allcolors.pdf) version.
 ![coverletter](showcase/coverletter.jpg)
 
 ## Requirements
