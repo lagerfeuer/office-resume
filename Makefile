@@ -14,9 +14,9 @@ build: $(PDFS)
 
 resume: resume.pdf
 
-cover-letter: coverletter.pdf
+coverletter: coverletter.pdf
 
-cover-letters: coverletters/*.pdf
+coverletters: coverletters/*.pdf
 
 %.pdf: %.tex
 	$(LATEX) $(FLAGS) $<
@@ -27,4 +27,4 @@ clean:
 cleanall:
 	$(LATEX) $(FLAGS) -C
 
-.PHONY: build example resume cover-letter clean cleanall
+.PHONY: build example resume coverletter coverletters clean cleanall

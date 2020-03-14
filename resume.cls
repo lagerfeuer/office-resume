@@ -77,10 +77,10 @@
 % \titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
 \titlespacing{\section}{0pt}{0pt}{.5em}
 \titleformat{\section}{
-  \color{\@sectioncolor}\RaggedLeft\Quicksand\LARGE\bfseries
+  \color{\@sectioncolor}\RaggedLeft\subheaderfont\LARGE\bfseries
 }{}{0em}{\@secondarycolor\titlerule[2pt]}
 \titlespacing{\subsection}{0pt}{-.2em}{0pt}
-\titleformat{\subsection}[runin]{\Quicksand\large\bfseries}{}{0em}{}[\enspace]
+\titleformat{\subsection}[runin]{\subheaderfont\large\bfseries}{}{0em}{}[\enspace]
 
 \newcommand*{\rulercolor}[1]{\def\@rulercolor{\color{#1}}}
 
