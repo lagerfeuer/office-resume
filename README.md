@@ -5,8 +5,10 @@ I am sure you can make it work for multiple pages, however I have not tried that
 
 ## Showcase
 ### Resume
+[PDF](showcase/resume.pdf) or [All Colors](showcase/resume-allcolors.pdf)
 ![resume](showcase/resume.jpg)
 ### Cover Letter
+[PDF](showcase/coverletter.pdf) or [All Colors](showcase/coverletter-allcolors.pdf)
 ![coverletter](showcase/coverletter.jpg)
 
 ## Requirements
@@ -43,9 +45,9 @@ Docker image: `lagerfeuer/xetexlive:latest`
 
 ```sh
 docker run \
---rm -v $(pwd):/resume --workdir=/resume \
-lagerfeuer/xetexlive-more:latest \
-make coverletter resume
+  --rm -v $(pwd):/resume --workdir=/resume \
+  lagerfeuer/xetexlive-more:latest \
+  make coverletter resume
 ```
 
 ### All colors
