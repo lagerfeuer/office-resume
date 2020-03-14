@@ -41,7 +41,7 @@ latexmk -pvc -output-directory=out/ resume.tex
 ```
 
 ### Docker Build
-Docker image: `lagerfeuer/xetexlive:latest`
+Docker image: `lagerfeuer/xetexlive-more:latest`
 
 ```sh
 docker run \
