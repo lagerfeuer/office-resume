@@ -1,4 +1,4 @@
-# Office Template
+# Office Resume
 
 This template is intended to be used as a single page resume.
 I am sure you can make it work for multiple pages, however I have not tried that yet.
@@ -43,9 +43,9 @@ Docker image: `lagerfeuer/xetexlive:latest`
 
 ```sh
 docker run \
-  --rm -v $(pwd):/resume --workdir=/resume \
-  lagerfeuer/xetexlive-more:latest \
-  make coverletter resume
+--rm -v $(pwd):/resume --workdir=/resume \
+lagerfeuer/xetexlive-more:latest \
+make coverletter resume
 ```
 
 ### All colors
