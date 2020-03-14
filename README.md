@@ -1,4 +1,13 @@
-# resume-template
+# Office Template
+
+This template is intended to be used as a single page resume.
+I am sure you can make it work for multiple pages, however I have not tried that yet.
+
+## Showcase
+### Resume
+![resume](showcase/resume.png)
+### Cover Letter
+![coverletter](showcase/coverletter.png)
 
 ## Requirements
 * XeTeX
@@ -6,6 +15,9 @@
 * _optional:_ make
 
 ## Build
+This project can be build using either `make`, `latexmk` or
+a LaTeX Docker image which includes XeTeX and `latexmk`.
+
 ### Make
 ```sh
 make cover-letter
@@ -36,10 +48,14 @@ docker run \
   make coverletter resume
 ```
 
-## Showcase
 ### All colors
 To see all color options that are included by default, run
 ```sh
 make allcolors
 ```
 and open the files `out/resume-allcolors.pdf` and `out/coverletter-allcolors.pdf`.
+
+
+## Changelog
+### v1.0
+Initial release (2020-03-14)
