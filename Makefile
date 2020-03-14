@@ -12,6 +12,8 @@ all: build
 
 build: $(PDFS)
 
+allcolors: resume-allcolors.pdf coverletter-allcolors.pdf
+
 resume: resume.pdf
 
 coverletter: coverletter.pdf
@@ -27,4 +29,4 @@ clean:
 cleanall:
 	$(LATEX) $(FLAGS) -C
 
-.PHONY: build example resume coverletter coverletters clean cleanall
+.PHONY: build allcolors resume coverletter coverletters clean cleanall
