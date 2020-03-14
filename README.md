@@ -5,9 +5,9 @@ I am sure you can make it work for multiple pages, however I have not tried that
 
 ## Showcase
 ### Resume
-![resume](showcase/resume.png)
+![resume](showcase/resume.jpg)
 ### Cover Letter
-![coverletter](showcase/coverletter.png)
+![coverletter](showcase/coverletter.jpg)
 
 ## Requirements
 * XeTeX
