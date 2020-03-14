@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DENSITY=150
+DENSITY=300
 QUALITY=90
 FILES='resume coverletter'
 
